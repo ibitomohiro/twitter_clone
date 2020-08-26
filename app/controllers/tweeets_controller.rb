@@ -1,4 +1,5 @@
 class TweeetsController < ApplicationController
+  before_action :set_tweeet, only: [:show, :edit, :update]
   def index
     @tweeets = Tweeet.all
   end
@@ -30,5 +31,8 @@ class TweeetsController < ApplicationController
   private
   def tweeet_params
     params.require(:tweeet).permit(:content)
+  end
+  def set_tweeet
+    @tweeet = Tweeet.find(params[:id])
   end
 end
