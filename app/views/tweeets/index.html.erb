@@ -1,2 +1,14 @@
-<h1>Tweeets#index</h1>
-<p>Find me in app/views/tweeets/index.html.erb</p>
+<h1>Tweeet 一覧</h1>
+<table>
+<tr>
+  <th>内容</th>
+</tr>
+<% @tweeets.each do |tweeet| %>
+<tr>
+  <td><%= tweeet.content %></td>
+  <td><%= link_to '詳細を確認する', tweeet_path(tweeet.id) %></td>
+</tr>
+<% end %>
+</table>
+<br>
+<%= link_to '新しくブログを投稿する', new_tweeet_path %>
