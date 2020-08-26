@@ -6,8 +6,12 @@ class TweeetsController < ApplicationController
     @tweeet = Tweeet.new
   end
   def create 
-    Tweeet.create(tweeet_params)
-    redirect_to new_tweeet_path
+    @tweeet = Tweeet.new(tweeet_params)
+    if @tweeet.save
+      redirect_to tweeets_path, notice: "Tweeet を投稿しました！"
+    else  
+      render :new
+    end
   end
   def show
     @tweeet = Tweeet.find(params[:id])
