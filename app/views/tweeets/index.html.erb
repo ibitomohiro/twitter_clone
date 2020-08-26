@@ -7,6 +7,7 @@
 <tr>
   <td><%= tweeet.content %></td>
   <td><%= link_to '詳細を確認する', tweeet_path(tweeet.id) %></td>
+  <td><%= link_to 'Tweeetを編集する', edit_tweeet_path(tweeet.id) %></td>
 </tr>
 <% end %>
 </table>
