@@ -30,7 +30,7 @@ class TweeetsController < ApplicationController
   end
   def destroy
     @tweeet.destroy
-    redirect_to tweeets_path, notice: "Tweeetしました！"
+    redirect_to tweeets_path, notice: "Tweeetを削除しました！"
   end
   private
   def tweeet_params
