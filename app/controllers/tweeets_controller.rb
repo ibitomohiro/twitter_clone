@@ -8,10 +8,14 @@ class TweeetsController < ApplicationController
   end
   def create 
     @tweeet = Tweeet.new(tweeet_params)
-    if @tweeet.save
-      redirect_to tweeets_path, notice: "Tweeet を投稿しました！"
-    else  
+    if params[:back]
       render :new
+    else
+      if @tweeet.save
+        redirect_to tweeets_path, notice: "Tweeet を投稿しました！"
+      else  
+        render :new
+      end
     end
   end
   def show
@@ -31,6 +35,10 @@ class TweeetsController < ApplicationController
   def destroy
     @tweeet.destroy
     redirect_to tweeets_path, notice: "Tweeetを削除しました！"
+  end
+  def confirm
+    @tweeet = Tweeet.new(tweeet_params)
+    render :new if @tweeet.invalid?
   end
   private
   def tweeet_params

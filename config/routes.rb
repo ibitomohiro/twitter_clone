@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  get '/tweeets', to: 'tweeets#index'
-  resources :tweeets
+  resources :tweeets do
+    collection do
+      post :confirm
+    end
+  end
 end

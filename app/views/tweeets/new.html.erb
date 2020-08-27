@@ -1,6 +1,6 @@
 <h2>Tweeet する</h2>
   <% render 'form' %>
-<%= form_with(model: @tweeet, local: true) do |form| %>
+<%= form_with(model: @tweeet, local: true, url: {action: 'confirm'}) do |form| %>
   <% if @tweeet.errors.any? %>
     <div id="error_explanation">
       <h2><%= @tweeet.errors.count %>件のエラーがあります。</h2>
