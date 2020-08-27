@@ -1,7 +1,7 @@
 <h1>Tweeet 一覧</h1>
 <table>
 <tr>
-  <th>内容</th>
+  <th><h3>過去のTweeet内容</h3></th>
 </tr>
 <% @tweeets.each do |tweeet| %>
 <tr>
@@ -13,4 +13,4 @@
 <% end %>
 </table>
 <br>
-<%= link_to '新しくブログを投稿する', new_tweeet_path %>
+<%= link_to '新しくTweeet を投稿する', new_tweeet_path, class: "btn btn-primary" %>
