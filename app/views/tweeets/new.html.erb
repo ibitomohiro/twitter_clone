@@ -1,5 +1,8 @@
 <h2>Tweeet する</h2>
   <% render 'form' %>
+  <div>
+    <%= image_tag'tweeeter_bird', width:'315' %>
+  </div>
 <%= form_with(model: @tweeet, local: true, url: {action: 'confirm'}) do |form| %>
   <% if @tweeet.errors.any? %>
     <div id="error_explanation">

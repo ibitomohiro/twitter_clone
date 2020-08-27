@@ -1,4 +1,30 @@
 @import "bootstrap";
+header {
+  
+}
+h3 {
+  position: relative;
+  vertical-align: middle;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: skyblue;
+  color: white;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+body {
+  background-color: #F7f8F9;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+
+}
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

@@ -1,9 +1,15 @@
-<h1>Tweeet 一覧</h1>
-<p><%= notice %></p>
-<table>
-<tr>
-  <th><h3>過去のTweeet内容</h3></th>
-</tr>
+<header>
+  <h1>Tweeet 一覧</h1>
+  <p><%= notice %></p>
+  <div class="tweeeter_bird">
+      <%= image_tag'tweeeter_bird', width:'315' %>
+  </div>
+  <table>
+  <tr>
+    <th><h3>過去のTweeet内容</h3></th>
+  </tr>
+</header>
+<body>
 <% @tweeets.each do |tweeet| %>
 <tr>
   <td><%= tweeet.content %></td>
@@ -15,3 +21,7 @@
 </table>
 <br>
 <%= link_to '新しくTweeet を投稿する', new_tweeet_path, class: "btn btn-primary" %>
+</body>
+<footer>
+  <p class="copyright">&copy; 2020 ibitomoTweeeter inc </p>
+</footer>
