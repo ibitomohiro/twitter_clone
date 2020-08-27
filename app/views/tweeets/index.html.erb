@@ -11,6 +11,7 @@
 </header>
 <body>
 <% @tweeets.each do |tweeet| %>
+<table>
 <tr>
   <td><%= tweeet.content %></td>
   <td><%= link_to '詳細を確認する', tweeet_path(tweeet.id) %></td>
