@@ -7,7 +7,8 @@
 <tr>
   <td><%= tweeet.content %></td>
   <td><%= link_to '詳細を確認する', tweeet_path(tweeet.id) %></td>
-  <td><%= link_to 'Tweeetを編集する', edit_tweeet_path(tweeet.id) %></td>
+  <td><%= link_to 'Tweeetを編集する', edit_tweeet_path(tweeet.id), data: { confirm: '本当に編集していいですか？'} %></td>
+  <td><%= link_to 'Tweeetを削除する', tweeet_path(tweeet.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
 </tr>
 <% end %>
 </table>

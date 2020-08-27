@@ -1,5 +1,5 @@
 class TweeetsController < ApplicationController
-  before_action :set_tweeet, only: [:show, :edit, :update]
+  before_action :set_tweeet, only: [:show, :edit, :update, :destroy]
   def index
     @tweeets = Tweeet.all
   end
@@ -27,6 +27,10 @@ class TweeetsController < ApplicationController
     else  
       render :edit
     end
+  end
+  def destroy
+    @tweeet.destroy
+    redirect_to tweeets_path, notice: "Tweeetしました！"
   end
   private
   def tweeet_params
