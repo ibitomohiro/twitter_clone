@@ -3,9 +3,11 @@ class TweeetsController < ApplicationController
   def index
     @tweeets = Tweeet.all
   end
+
   def new
     @tweeet = Tweeet.new
   end
+
   def create 
     @tweeet = Tweeet.new(tweeet_params)
     if params[:back]
@@ -18,12 +20,15 @@ class TweeetsController < ApplicationController
       end
     end
   end
+
   def show
     @tweeet = Tweeet.find(params[:id])
   end
+
   def edit
     @tweeet = Tweeet.find(params[:id])
   end
+
   def update
     @tweeet = Tweeet.find(params[:id])
     if @tweeet.update(tweeet_params)
@@ -32,19 +37,24 @@ class TweeetsController < ApplicationController
       render :edit
     end
   end
+
   def destroy
     @tweeet.destroy
     redirect_to tweeets_path, notice: "Tweeetを削除しました！"
   end
+
   def confirm
     @tweeet = Tweeet.new(tweeet_params)
     render :new if @tweeet.invalid?
   end
+
   private
   def tweeet_params
     params.require(:tweeet).permit(:content)
   end
+
   def set_tweeet
     @tweeet = Tweeet.find(params[:id])
   end
+  
 end
